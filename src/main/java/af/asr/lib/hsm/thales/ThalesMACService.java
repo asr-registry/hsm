@@ -91,7 +91,7 @@ public final class ThalesMACService implements MACService {
 			StringBuilder sb = new StringBuilder().append("0000M600131008").append("U618CB48CB618CE08AE03CF28E2872907");
 			String length = String.format("%04X", MAB.length());
 			sb.append(length).append(MAB);
-			String response = ThalesHSMConnect.send(hsmConfig, sb.toString(), Logger.CONSOLE);
+			String response = ThalesHSMConnect.send(hsmConfig, sb.toString(),  LoggerFactory.getLogger("HSM"));
 			return response.substring(8);
 		} catch (Exception e) {e.printStackTrace();}
 		return "";
@@ -102,11 +102,11 @@ public final class ThalesMACService implements MACService {
 		HSMConfig hsmConfig = HSMConfig.newBuilder("10.100.5.21", 6046).build();
 		generateMAC(hsmConfig, "ABCD");
 		MACResponse response = service.mac().calculateMAC(hsmConfig, MACMode.ONLY_BLOCK_OF_SINGLE_BLOCK_MESSAGE, InputFormat.BINARY, MACSize.SIXTEEN_HEX_DIGITS, 
-				MACAlgorithm.ISO9797MAC_ALG3, MACPadding.ISO9797_PADDING1, MACKeyType.ZAC, "U618CB48CB618CE08AE03CF28E2872907", null, "ABCD".getBytes(), Logger.CONSOLE);
+				MACAlgorithm.ISO9797MAC_ALG3, MACPadding.ISO9797_PADDING1, MACKeyType.ZAC, "U618CB48CB618CE08AE03CF28E2872907", null, "ABCD".getBytes(),  LoggerFactory.getLogger("HSM"));
 		System.out.println(response);
 		
 		response = service.mac().validateMAC(hsmConfig, MACMode.ONLY_BLOCK_OF_SINGLE_BLOCK_MESSAGE, InputFormat.BINARY, MACSize.SIXTEEN_HEX_DIGITS, 
-				MACAlgorithm.ISO9797MAC_ALG3, MACPadding.ISO9797_PADDING1, MACKeyType.ZAC, "U618CB48CB618CE08AE03CF28E2872907", null, "ABCD".getBytes(), "DD7D1402442073F7",  Logger.CONSOLE);
+				MACAlgorithm.ISO9797MAC_ALG3, MACPadding.ISO9797_PADDING1, MACKeyType.ZAC, "U618CB48CB618CE08AE03CF28E2872907", null, "ABCD".getBytes(), "DD7D1402442073F7",   LoggerFactory.getLogger("HSM"));
 		System.out.println(response);
 	}
 }

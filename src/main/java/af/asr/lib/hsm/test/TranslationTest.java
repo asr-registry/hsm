@@ -15,6 +15,6 @@ public class TranslationTest {
 		HSMConfig  hsmConfig  = new HSMConfig("10.100.5.21", 6046);
 		HSMService hsmService = new ThalesHSMService();
 		hsmService.translator().fromZPKToZPK(hsmConfig, "368320008173", "B58ADECA2C972098", PinBlockFormat.ISOFORMAT0, "UB27EC3FAB16D5D4D0DFCC5C3246776E3",
-				PinBlockFormat.ISOFORMAT0, "U401770057601955CD7797A450474C4E1", Logger.CONSOLE);
+				PinBlockFormat.ISOFORMAT0, "U401770057601955CD7797A450474C4E1",  LoggerFactory.getLogger("HSM"));
 	}
 }
