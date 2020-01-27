@@ -1,4 +1,4 @@
-package af.asr.lib.hsm.test;
+package af.asr.lib.hsm;
 
 import af.asr.lib.hsm.api.HSMConfig;
 import af.asr.lib.hsm.api.HSMService;

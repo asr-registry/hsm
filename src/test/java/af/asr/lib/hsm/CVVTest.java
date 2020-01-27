@@ -1,4 +1,4 @@
-package af.asr.lib.hsm.test;
+package af.asr.lib.hsm;
 
 import af.asr.lib.hsm.api.HSMConfig;
 import af.asr.lib.hsm.api.HSMService;
@@ -8,9 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.LoggerFactory;
 
+
 public class CVVTest {
 
-	public static HSMConfig  hsmConfig  = new HSMConfig("10.100.5.21", 6046);
+	public static HSMConfig  hsmConfig  = new HSMConfig("127.0.0.1", 6046);
 	public static HSMService hsmService = new ThalesHSMService();
 
 

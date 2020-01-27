@@ -1,4 +1,4 @@
-package af.asr.lib.hsm.test;
+package af.asr.lib.hsm;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
