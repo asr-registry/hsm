@@ -1,4 +1,4 @@
-package af.asr.lib.hsm.api.model;
+package af.asr.lib.hsm.model;
 
 public class HSMResponse {
 

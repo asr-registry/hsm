@@ -1,8 +1,8 @@
 package af.asr.lib.hsm.api.constants;
 
 /**
- * @author Krishna Telgave
- * {@linkplain}  This class contains all command implementated for Thales Payshield 9000 HSM.
+ *
+ * This class contains all command implementated for Thales Payshield 9000 HSM.
  */
 public class Command {
 	
