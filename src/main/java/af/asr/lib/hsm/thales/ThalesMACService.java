@@ -16,6 +16,7 @@ import af.asr.lib.hsm.api.constants.MACPadding;
 import af.asr.lib.hsm.api.constants.MACSize;
 import af.asr.lib.hsm.api.model.MACResponse;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class ThalesMACService implements MACService {
 

@@ -5,6 +5,7 @@ import af.asr.lib.hsm.api.HSMConfig;
 import af.asr.lib.hsm.api.ThalesHSMConnect;
 import af.asr.lib.hsm.api.model.HSMResponse;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class ThalesCVVService implements CVVService {
 

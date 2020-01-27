@@ -13,6 +13,8 @@ import af.asr.lib.hsm.thales.ThalesHSMService;
 import af.asr.lib.hsm.thales.ThalesHSMService;
 import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.LoggerFactory;
 
 @Log4j2
 public class KeyServiceTest {
@@ -21,7 +23,7 @@ public class KeyServiceTest {
 	public static HSMService hsmService = new ThalesHSMService();
 
 	public static GenKeyResponse generateKeyTest() {
-		return hsmService.key().generateKey(hsmConfig, KeyType.ZPK, KeyScheme.VARIANT.SINGLE_LEN, log);
+		return hsmService.key().generateKey(hsmConfig, KeyType.ZPK, KeyScheme.VARIANT.SINGLE_LEN, LoggerFactory.getLogger("HSM"));
 	}
 
 	public static GenKeyResponse generateExportKey() {

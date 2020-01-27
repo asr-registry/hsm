@@ -9,6 +9,7 @@ import af.asr.lib.hsm.api.constants.PinBlockFormat;
 import af.asr.lib.hsm.api.constants.PinKeyType;
 import af.asr.lib.hsm.api.model.HSMResponse;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class ThalesPVVService implements PVVService {
 

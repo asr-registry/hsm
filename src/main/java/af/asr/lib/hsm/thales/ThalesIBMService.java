@@ -10,6 +10,7 @@ import af.asr.lib.hsm.api.constants.PinKeyType;
 import af.asr.lib.hsm.api.model.HSMResponse;
 import af.asr.lib.hsm.api.util.Strings;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class ThalesIBMService implements IBMService {
 

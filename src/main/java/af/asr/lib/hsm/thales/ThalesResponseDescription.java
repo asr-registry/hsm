@@ -1,10 +1,12 @@
 package af.asr.lib.hsm.thales;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public final class ThalesResponseDescription {
 
-	public static final Map<String, String> codemap = Map.of();
+	public static final Map<String, String> codemap = new HashMap<>();
 
 	static {
 		codemap.put("00", "No error.");

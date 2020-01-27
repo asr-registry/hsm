@@ -6,6 +6,7 @@ import af.asr.lib.hsm.thales.ThalesHSMService;
 import org.apache.commons.logging.LogFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.LoggerFactory;
 
 public class CVVTest {
 

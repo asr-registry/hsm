@@ -8,6 +8,7 @@ import af.asr.lib.hsm.api.HSMService;
 import af.asr.lib.hsm.api.constants.PinBlockFormat;
 import af.asr.lib.hsm.thales.ThalesHSMService;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TranslationTest {
 

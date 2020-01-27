@@ -8,6 +8,7 @@ import af.asr.lib.hsm.api.constants.PinKeyType;
 import af.asr.lib.hsm.api.util.Utils;
 import af.asr.lib.hsm.thales.ThalesHSMService;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class IBMTest {
 

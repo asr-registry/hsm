@@ -9,6 +9,7 @@ import java.net.UnknownHostException;
 
 import af.asr.lib.hsm.api.util.ByteHexUtil;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SafenetHSMConnect {
 

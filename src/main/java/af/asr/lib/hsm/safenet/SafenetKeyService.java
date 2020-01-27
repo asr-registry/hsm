@@ -13,6 +13,7 @@ import af.asr.lib.hsm.api.constants.MasterKeyType;
 import af.asr.lib.hsm.api.model.GenKeyResponse;
 import af.asr.lib.hsm.api.model.HSMResponse;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class SafenetKeyService implements KeyService {
 

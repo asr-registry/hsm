@@ -3,6 +3,7 @@ package af.asr.lib.hsm.api;
 import af.asr.lib.hsm.api.constants.PinBlockFormat;
 import af.asr.lib.hsm.api.model.HSMResponse;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public interface ThalesService {
 

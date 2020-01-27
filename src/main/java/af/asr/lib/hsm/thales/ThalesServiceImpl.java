@@ -7,6 +7,7 @@ import af.asr.lib.hsm.api.constants.PinBlockFormat;
 import af.asr.lib.hsm.api.model.HSMResponse;
 import af.asr.lib.hsm.api.util.Strings;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 //@formatter:off
 public final class ThalesServiceImpl implements ThalesService {
