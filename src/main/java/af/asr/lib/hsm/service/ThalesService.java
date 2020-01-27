@@ -1,8 +1,10 @@
 package af.asr.lib.hsm.service;
 
-import org.util.hsm.api.constants.PinBlockFormat;
-import org.util.hsm.api.model.HSMResponse;
-import org.util.nanolog.Logger;
+import af.asr.lib.hsm.constants.*;
+import af.asr.lib.hsm.model.HSMResponse;
+import af.asr.lib.hsm.model.MACResponse;
+
+import java.util.logging.Logger;
 
 public interface ThalesService {
 
