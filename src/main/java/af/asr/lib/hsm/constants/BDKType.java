@@ -1,4 +1,4 @@
-package af.asr.lib.hsm.api.constants;
+package af.asr.lib.hsm.constants;
 
 
 public enum BDKType {

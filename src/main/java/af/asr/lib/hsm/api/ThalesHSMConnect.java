@@ -9,15 +9,17 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
+import java.util.logging.Logger;
 
-import org.util.hsm.api.util.ByteHexUtil;
-import org.util.nanolog.Logger;
+import af.asr.lib.hsm.util.ByteHexUtil;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class ThalesHSMConnect {
 
 	//@formatter:off
 	public static final String send(final HSMConfig hsmConfig, final String command, final Logger logger) throws UnknownHostException, IOException {
-		logger.trace("hsm command", command);
+		log.trace("hsm command", command);
 		try(final Socket sc = new Socket(hsmConfig.host, hsmConfig.port);
 			final DataInputStream din = new DataInputStream(sc.getInputStream());
 			final DataOutputStream dos = new DataOutputStream(sc.getOutputStream())) {
@@ -25,7 +27,7 @@ public class ThalesHSMConnect {
 			dos.writeUTF(command);
 			dos.flush();
 			final String response = din.readUTF();
-			logger.trace("hsm response", response);
+			log.trace("hsm response", response);
 			return response;
 		}
 	}
@@ -46,7 +48,7 @@ public class ThalesHSMConnect {
 			sc.setSoTimeout(5000);
 			command[0] = (byte) ((command.length-2)/256);
 			command[1] = (byte) ((command.length-2)%256);
-			logger.trace("hsm command", ByteHexUtil.byteToHex(command));
+			log.trace("hsm command", ByteHexUtil.byteToHex(command));
 			os.write(command);
 			os.flush();
 			final byte b1 = (byte) in.read();
@@ -54,7 +56,7 @@ public class ThalesHSMConnect {
 			if(b1 < 0 || b2 < 0) throw new SocketTimeoutException("no response from hsm.");
 			final byte[] response = new byte[b1*256+b2];
 			in.read(response);
-			logger.trace("hsm response", ByteHexUtil.byteToHex(response));
+			log.trace("hsm response", ByteHexUtil.byteToHex(response));
 			return response;
 		}
 	}

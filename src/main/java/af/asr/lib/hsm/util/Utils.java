@@ -1,4 +1,4 @@
-package af.asr.lib.hsm.api.util;
+package af.asr.lib.hsm.util;
 
 public class Utils {
 
