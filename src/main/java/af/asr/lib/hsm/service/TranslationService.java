@@ -1,4 +1,4 @@
-package af.asr.lib.hsm.api;
+package af.asr.lib.hsm.service;
 
 import org.util.hsm.api.constants.BDKType;
 import org.util.hsm.api.constants.KSNDescriptor;

@@ -1,15 +1,18 @@
-package af.asr.lib.hsm.api;
+package af.asr.lib.hsm.service;
 
-import org.util.hsm.api.constants.BDKType;
-import org.util.hsm.api.constants.KeyLength;
-import org.util.hsm.api.constants.KeyScheme;
-import org.util.hsm.api.constants.KeyScheme.ANSI;
-import org.util.hsm.api.constants.KeyScheme.VARIANT;
-import org.util.hsm.api.constants.KeyType;
-import org.util.hsm.api.constants.MasterKeyType;
-import org.util.hsm.api.model.GenKeyResponse;
-import org.util.hsm.api.model.HSMResponse;
-import org.util.nanolog.Logger;
+import af.asr.lib.hsm.constants.BDKType;
+import af.asr.lib.hsm.constants.KeyLength;
+import af.asr.lib.hsm.constants.KeyScheme;
+import af.asr.lib.hsm.constants.KeyScheme.ANSI;
+import af.asr.lib.hsm.constants.KeyScheme.VARIANT;
+import af.asr.lib.hsm.constants.KeyType;
+import af.asr.lib.hsm.constants.MasterKeyType;
+import af.asr.lib.hsm.model.GenKeyResponse;
+import af.asr.lib.hsm.model.HSMResponse;
+import af.asr.lib.hsm.service.HSMConfig;
+import af.asr.lib.hsm.service.KeyService;
+
+import java.util.logging.Logger;
 
 public interface KeyService {
 

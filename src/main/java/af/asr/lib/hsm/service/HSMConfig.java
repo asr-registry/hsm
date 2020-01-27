@@ -1,4 +1,4 @@
-package af.asr.lib.hsm.api;
+package af.asr.lib.hsm.service;
 
 
 public class HSMConfig {

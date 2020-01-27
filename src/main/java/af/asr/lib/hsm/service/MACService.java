@@ -1,4 +1,4 @@
-package af.asr.lib.hsm.api;
+package af.asr.lib.hsm.service;
 
 import org.util.hsm.api.constants.InputFormat;
 import org.util.hsm.api.constants.MACAlgorithm;

@@ -1,4 +1,6 @@
-package af.asr.lib.hsm.api;
+package af.asr.lib.hsm.service;
+
+import af.asr.lib.hsm.util.ByteHexUtil;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -6,9 +8,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.logging.Logger;
 
-import org.util.hsm.api.util.ByteHexUtil;
-import org.util.nanolog.Logger;
 
 public class SafenetHSMConnect {
 
