@@ -4,7 +4,7 @@ import af.asr.lib.hsm.api.constants.BDKType;
 import af.asr.lib.hsm.api.constants.KSNDescriptor;
 import af.asr.lib.hsm.api.constants.PinBlockFormat;
 import af.asr.lib.hsm.api.model.HSMResponse;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public interface TranslationService {
 

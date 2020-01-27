@@ -9,16 +9,19 @@ import af.asr.lib.hsm.api.constants.KeyScheme.VARIANT;
 import af.asr.lib.hsm.api.constants.KeyType;
 import af.asr.lib.hsm.api.constants.MasterKeyType;
 import af.asr.lib.hsm.api.model.GenKeyResponse;
-import org.util.hsm.thales.ThalesHSMService;
-import org.util.nanolog.Logger;
+import af.asr.lib.hsm.thales.ThalesHSMService;
+import af.asr.lib.hsm.thales.ThalesHSMService;
+import lombok.extern.log4j.Log4j2;
+import org.slf4j.Logger;
 
+@Log4j2
 public class KeyServiceTest {
 
 	public static HSMConfig  hsmConfig  = new HSMConfig("10.100.5.21", 6046);
 	public static HSMService hsmService = new ThalesHSMService();
 
 	public static GenKeyResponse generateKeyTest() {
-		return hsmService.key().generateKey(hsmConfig, KeyType.ZPK, KeyScheme.VARIANT.SINGLE_LEN, Logger.CONSOLE);
+		return hsmService.key().generateKey(hsmConfig, KeyType.ZPK, KeyScheme.VARIANT.SINGLE_LEN, log);
 	}
 
 	public static GenKeyResponse generateExportKey() {

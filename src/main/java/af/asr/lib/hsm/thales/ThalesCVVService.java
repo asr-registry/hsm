@@ -4,19 +4,19 @@ import af.asr.lib.hsm.api.CVVService;
 import af.asr.lib.hsm.api.HSMConfig;
 import af.asr.lib.hsm.api.ThalesHSMConnect;
 import af.asr.lib.hsm.api.model.HSMResponse;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public final class ThalesCVVService implements CVVService {
 
 	//@formatter:off
-	public final HSMResponse calculateCVV(final HSMConfig hsmConfig, final String pan, final String serviceCode, final String expiry, final String cvk1, final String cvk2, final Logger logger) {
+	public final HSMResponse calculateCVV(final HSMConfig hsmConfig, final String pan, final String serviceCode, final String expiry, final String cvk1, final String cvk2, final org.slf4j.Logger logger) {
 		try {
 			final String      command     = new StringBuilder(60).append("0000CW").append(cvk1).append(cvk2).append(pan).append(";").append(expiry).append(serviceCode).toString();
 			final String      response    = ThalesHSMConnect.send(hsmConfig, command, logger);
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8, 11);
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -26,7 +26,7 @@ public final class ThalesCVVService implements CVVService {
 			final String        response    = ThalesHSMConnect.send(hsmConfig, command.toString(), logger);
 			final HSMResponse   hsmResponse = new HSMResponse(response.substring(6, 8));
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 }

@@ -8,7 +8,7 @@ import af.asr.lib.hsm.api.constants.KSNDescriptor;
 import af.asr.lib.hsm.api.constants.PinBlockFormat;
 import af.asr.lib.hsm.api.constants.PinKeyType;
 import af.asr.lib.hsm.api.model.HSMResponse;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public final class ThalesPVVService implements PVVService {
 
@@ -30,7 +30,7 @@ public final class ThalesPVVService implements PVVService {
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8);
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 	
@@ -45,7 +45,7 @@ public final class ThalesPVVService implements PVVService {
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8);
 			return hsmResponse;
 		} catch (Exception e) {
-			logger.error(e);
+			logger.error(e.getMessage());
 		}
 		return HSMResponse.IO;
 	}
@@ -59,7 +59,7 @@ public final class ThalesPVVService implements PVVService {
 			final String response = ThalesHSMConnect.send(hsmConfig, command, logger);
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -72,7 +72,7 @@ public final class ThalesPVVService implements PVVService {
 			final String      response    = ThalesHSMConnect.send(hsmConfig, command, logger);
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -85,7 +85,7 @@ public final class ThalesPVVService implements PVVService {
 			final String      response    = ThalesHSMConnect.send(hsmConfig, command, logger);
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -98,7 +98,7 @@ public final class ThalesPVVService implements PVVService {
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if(hsmResponse.isSuccess) hsmResponse.value = response.substring(8,12);
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 

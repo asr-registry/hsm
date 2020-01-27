@@ -12,7 +12,7 @@ import af.asr.lib.hsm.api.constants.KeyType;
 import af.asr.lib.hsm.api.constants.MasterKeyType;
 import af.asr.lib.hsm.api.model.GenKeyResponse;
 import af.asr.lib.hsm.api.model.HSMResponse;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public final class SafenetKeyService implements KeyService {
 
@@ -66,7 +66,7 @@ public final class SafenetKeyService implements KeyService {
 				hsmResponse.kcv         = response.substring(12 + keyLen*2);
 			}
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return GenKeyResponse.IO;
 	}
 

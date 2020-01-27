@@ -1,7 +1,7 @@
 package af.asr.lib.hsm.api;
 
 import af.asr.lib.hsm.api.model.HSMResponse;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public interface CVVService {
 

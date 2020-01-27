@@ -6,8 +6,8 @@ import java.net.UnknownHostException;
 import af.asr.lib.hsm.api.HSMConfig;
 import af.asr.lib.hsm.api.HSMService;
 import af.asr.lib.hsm.api.constants.PinBlockFormat;
-import org.util.hsm.thales.ThalesHSMService;
-import org.util.nanolog.Logger;
+import af.asr.lib.hsm.thales.ThalesHSMService;
+import org.slf4j.Logger;
 
 public class TranslationTest {
 

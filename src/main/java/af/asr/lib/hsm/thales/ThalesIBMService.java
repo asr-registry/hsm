@@ -9,7 +9,7 @@ import af.asr.lib.hsm.api.constants.PinBlockFormat;
 import af.asr.lib.hsm.api.constants.PinKeyType;
 import af.asr.lib.hsm.api.model.HSMResponse;
 import af.asr.lib.hsm.api.util.Strings;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public final class ThalesIBMService implements IBMService {
 
@@ -28,7 +28,7 @@ public final class ThalesIBMService implements IBMService {
 			if (BAResponse.isSuccess) {
 				return calculateOffsetUsingPinLMK(hsmConfig, pan12, BAResponse.value, valdata, pvk, logger);
 			} else return BAResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -41,7 +41,7 @@ public final class ThalesIBMService implements IBMService {
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8, 12);
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -55,7 +55,7 @@ public final class ThalesIBMService implements IBMService {
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8, 12);
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -70,7 +70,7 @@ public final class ThalesIBMService implements IBMService {
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8, 12);
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -84,7 +84,7 @@ public final class ThalesIBMService implements IBMService {
 			final String      response    = ThalesHSMConnect.send(hsmConfig, command, logger);
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -98,7 +98,7 @@ public final class ThalesIBMService implements IBMService {
 			final String      response    = ThalesHSMConnect.send(hsmConfig, command, logger);
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -112,7 +112,7 @@ public final class ThalesIBMService implements IBMService {
 			final String      response    = ThalesHSMConnect.send(hsmConfig, command, logger);
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 

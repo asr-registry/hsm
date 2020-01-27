@@ -6,7 +6,7 @@ import af.asr.lib.hsm.api.ThalesService;
 import af.asr.lib.hsm.api.constants.PinBlockFormat;
 import af.asr.lib.hsm.api.model.HSMResponse;
 import af.asr.lib.hsm.api.util.Strings;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 //@formatter:off
 public final class ThalesServiceImpl implements ThalesService {
@@ -20,7 +20,7 @@ public final class ThalesServiceImpl implements ThalesService {
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8);
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -32,7 +32,7 @@ public final class ThalesServiceImpl implements ThalesService {
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8, 8 + hsmConfig.lengthOfPinLMK);
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 
@@ -44,7 +44,7 @@ public final class ThalesServiceImpl implements ThalesService {
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8, 8 + hsmConfig.lengthOfPinLMK).replaceAll("F", "");
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 

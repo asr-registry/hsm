@@ -5,8 +5,8 @@ import af.asr.lib.hsm.api.HSMService;
 import af.asr.lib.hsm.api.constants.KSNDescriptor;
 import af.asr.lib.hsm.api.constants.PinBlockFormat;
 import af.asr.lib.hsm.api.constants.PinKeyType;
-import org.util.hsm.thales.ThalesHSMService;
-import org.util.nanolog.Logger;
+import af.asr.lib.hsm.thales.ThalesHSMService;
+import org.slf4j.Logger;
 
 public class PVVtest {
 

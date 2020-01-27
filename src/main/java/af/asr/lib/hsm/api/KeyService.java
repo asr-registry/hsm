@@ -9,7 +9,7 @@ import af.asr.lib.hsm.api.constants.KeyType;
 import af.asr.lib.hsm.api.constants.MasterKeyType;
 import af.asr.lib.hsm.api.model.GenKeyResponse;
 import af.asr.lib.hsm.api.model.HSMResponse;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public interface KeyService {
 

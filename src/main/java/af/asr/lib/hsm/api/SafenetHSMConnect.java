@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import af.asr.lib.hsm.api.util.ByteHexUtil;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public class SafenetHSMConnect {
 

@@ -12,7 +12,7 @@ import af.asr.lib.hsm.api.constants.KeyType;
 import af.asr.lib.hsm.api.constants.MasterKeyType;
 import af.asr.lib.hsm.api.model.GenKeyResponse;
 import af.asr.lib.hsm.api.model.HSMResponse;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public final class ThalesKeyService implements KeyService {
 	
@@ -31,7 +31,7 @@ public final class ThalesKeyService implements KeyService {
 			final HSMResponse hsmResponse = new HSMResponse(response.substring(6, 8));
 			if (hsmResponse.isSuccess) hsmResponse.value = response.substring(8, 14);
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return HSMResponse.IO;
 	}
 	
@@ -53,7 +53,7 @@ public final class ThalesKeyService implements KeyService {
 				hsmResponse.kcv         = response.substring(index);
 			}
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return GenKeyResponse.IO;
 	}
 
@@ -84,7 +84,7 @@ public final class ThalesKeyService implements KeyService {
 				hsmResponse.kcv         = response.substring(mKeyIndex);
 			}
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return GenKeyResponse.IO;
 	}
 
@@ -108,7 +108,7 @@ public final class ThalesKeyService implements KeyService {
 				hsmResponse.kcv         = response.substring(41);
 			}
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return GenKeyResponse.IO;
 	}
 
@@ -137,7 +137,7 @@ public final class ThalesKeyService implements KeyService {
 				hsmResponse.kcv         = response.substring(74);
 			}
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return GenKeyResponse.IO;
 	}
 	
@@ -162,7 +162,7 @@ public final class ThalesKeyService implements KeyService {
 				hsmResponse.kcv         = response.substring(8 + keyLen);
 			}
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return GenKeyResponse.IO;
 	}
 
@@ -186,7 +186,7 @@ public final class ThalesKeyService implements KeyService {
 				hsmResponse.kcv         = response.substring(8 + keyLen);
 			}
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return GenKeyResponse.IO;
 	}
 	
@@ -213,7 +213,7 @@ public final class ThalesKeyService implements KeyService {
 				hsmResponse.kcv         = response.substring(8 + keyLen);
 			}
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return GenKeyResponse.IO;
 	}
 

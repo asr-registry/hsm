@@ -7,7 +7,7 @@ import af.asr.lib.hsm.api.constants.MACMode;
 import af.asr.lib.hsm.api.constants.MACPadding;
 import af.asr.lib.hsm.api.constants.MACSize;
 import af.asr.lib.hsm.api.model.MACResponse;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 
 public interface MACService {

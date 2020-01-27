@@ -15,7 +15,7 @@ import af.asr.lib.hsm.api.constants.MACMode;
 import af.asr.lib.hsm.api.constants.MACPadding;
 import af.asr.lib.hsm.api.constants.MACSize;
 import af.asr.lib.hsm.api.model.MACResponse;
-import org.util.nanolog.Logger;
+import org.slf4j.Logger;
 
 public final class ThalesMACService implements MACService {
 
@@ -47,7 +47,7 @@ public final class ThalesMACService implements MACService {
 				hsmResponse.mac = new String(Arrays.copyOfRange(response, 8, response.length), StandardCharsets.US_ASCII); 
 			}
 			return hsmResponse;
-		} catch (Exception e) {logger.error(e);}
+		} catch (Exception e) {logger.error(e.getMessage());}
 		return MACResponse.IO;
 	}
 	
@@ -77,7 +77,7 @@ public final class ThalesMACService implements MACService {
 				}
 			}
 			return hsmResponse;
-		}  catch (Exception e) {logger.error(e);}
+		}  catch (Exception e) {logger.error(e.getMessage());}
 		return MACResponse.IO;
 	}
 

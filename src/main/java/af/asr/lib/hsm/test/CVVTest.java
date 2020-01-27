@@ -2,8 +2,9 @@ package af.asr.lib.hsm.test;
 
 import af.asr.lib.hsm.api.HSMConfig;
 import af.asr.lib.hsm.api.HSMService;
-import org.util.hsm.thales.ThalesHSMService;
-import org.util.nanolog.Logger;
+import af.asr.lib.hsm.thales.ThalesHSMService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CVVTest {
 
