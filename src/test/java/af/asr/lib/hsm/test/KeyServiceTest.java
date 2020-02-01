@@ -1,25 +1,22 @@
 package af.asr.lib.hsm.test;
 
-import af.asr.lib.hsm.api.HSMConfig;
-import af.asr.lib.hsm.api.HSMService;
-import af.asr.lib.hsm.api.constants.BDKType;
-import af.asr.lib.hsm.api.constants.KeyScheme;
-import af.asr.lib.hsm.api.constants.KeyScheme.ANSI;
-import af.asr.lib.hsm.api.constants.KeyScheme.VARIANT;
-import af.asr.lib.hsm.api.constants.KeyType;
-import af.asr.lib.hsm.api.constants.MasterKeyType;
-import af.asr.lib.hsm.api.model.GenKeyResponse;
-import af.asr.lib.hsm.thales.ThalesHSMService;
-import af.asr.lib.hsm.thales.ThalesHSMService;
+import af.asr.lib.hsm.service.HSMConfig;
+import af.asr.lib.hsm.service.HSMService;
+import af.asr.lib.hsm.constants.BDKType;
+import af.asr.lib.hsm.constants.KeyScheme;
+import af.asr.lib.hsm.constants.KeyScheme.ANSI;
+import af.asr.lib.hsm.constants.KeyScheme.VARIANT;
+import af.asr.lib.hsm.constants.KeyType;
+import af.asr.lib.hsm.constants.MasterKeyType;
+import af.asr.lib.hsm.model.GenKeyResponse;
+import af.asr.lib.hsm.service.thales.ThalesHSMService;
 import lombok.extern.log4j.Log4j2;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.slf4j.LoggerFactory;
 
 @Log4j2
 public class KeyServiceTest {
 
-	public static HSMConfig  hsmConfig  = new HSMConfig("10.100.5.21", 6046);
+	public static HSMConfig  hsmConfig  = new HSMConfig("LoggerFactory.getLogger("HSM")", 6046);
 	public static HSMService hsmService = new ThalesHSMService();
 
 	public static GenKeyResponse generateKeyTest() {

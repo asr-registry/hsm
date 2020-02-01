@@ -1,17 +1,14 @@
 package af.asr.lib.hsm.test;
 
-import af.asr.lib.hsm.api.HSMConfig;
-import af.asr.lib.hsm.api.HSMService;
-import af.asr.lib.hsm.thales.ThalesHSMService;
-import org.apache.commons.logging.LogFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import af.asr.lib.hsm.service.HSMConfig;
+import af.asr.lib.hsm.service.HSMService;
+import af.asr.lib.hsm.service.thales.ThalesHSMService;
 import org.slf4j.LoggerFactory;
 
 
 public class CVVTest {
 
-	public static HSMConfig  hsmConfig  = new HSMConfig("127.0.0.1", 6046);
+	public static HSMConfig  hsmConfig  = new HSMConfig("LoggerFactory.getLogger("HSM")", 6046);
 	public static HSMService hsmService = new ThalesHSMService();
 
 

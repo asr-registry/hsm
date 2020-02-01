@@ -1,19 +1,18 @@
 package af.asr.lib.hsm.test;
 
-import af.asr.lib.hsm.api.HSMConfig;
-import af.asr.lib.hsm.api.HSMService;
-import af.asr.lib.hsm.api.constants.KSNDescriptor;
-import af.asr.lib.hsm.api.constants.PinBlockFormat;
-import af.asr.lib.hsm.api.constants.PinKeyType;
-import af.asr.lib.hsm.thales.ThalesHSMService;
-import org.slf4j.Logger;
+import af.asr.lib.hsm.service.HSMConfig;
+import af.asr.lib.hsm.service.HSMService;
+import af.asr.lib.hsm.constants.KSNDescriptor;
+import af.asr.lib.hsm.constants.PinBlockFormat;
+import af.asr.lib.hsm.constants.PinKeyType;
+import af.asr.lib.hsm.service.thales.ThalesHSMService;
 import org.slf4j.LoggerFactory;
 
 public class PVVtest {
 
 	public static void main(String[] args) {
 
-		HSMConfig  hsmConfig  = new HSMConfig("10.100.5.21", 6046);
+		HSMConfig  hsmConfig  = new HSMConfig("127.0.0.1", 6046);
 		HSMService hsmService = new ThalesHSMService();
 		System.out.println(hsmService.pvv().calculatePVVUsingPin(hsmConfig, "102002021168", "1234", "U4F12B3A7123D83B504C9F06D899C5D6B", "1",  LoggerFactory.getLogger("HSM")));
 		System.out.println(hsmService.pvv().calculatePVVUsingPinblock(hsmConfig, "102000221352", "7905D63257273DD3", PinBlockFormat.ANSIX98_FORMAT0,

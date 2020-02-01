@@ -1,19 +1,19 @@
 package af.asr.lib.hsm.test;
 
-import af.asr.lib.hsm.api.HSMConfig;
-import af.asr.lib.hsm.api.HSMService;
-import af.asr.lib.hsm.api.constants.KSNDescriptor;
-import af.asr.lib.hsm.api.constants.PinBlockFormat;
-import af.asr.lib.hsm.api.constants.PinKeyType;
-import af.asr.lib.hsm.api.util.Utils;
-import af.asr.lib.hsm.thales.ThalesHSMService;
-import org.slf4j.Logger;
+import af.asr.lib.hsm.service.HSMConfig;
+import af.asr.lib.hsm.service.HSMService;
+import af.asr.lib.hsm.constants.KSNDescriptor;
+import af.asr.lib.hsm.constants.PinBlockFormat;
+import af.asr.lib.hsm.constants.PinKeyType;
+import af.asr.lib.hsm.util.Utils;
+import af.asr.lib.hsm.service.thales.ThalesHSMService;
 import org.slf4j.LoggerFactory;
 
 public class IBMTest {
 
 	public static void main(String[] args) {
-		HSMConfig  hsmConfig  = new HSMConfig("10.100.5.21", 6046);
+
+		HSMConfig  hsmConfig  = new HSMConfig("LoggerFactory.getLogger("HSM")", 6046);
 		HSMService hsmService = new ThalesHSMService();
 		hsmService.ibm().calculateOffsetUsingPin(hsmConfig, Utils.getPAN12("6077990020000011"), "9211", Utils.getValidationData("6077990020000011"),
 				"4385B5DB5AEAF809",  LoggerFactory.getLogger("HSM"));
@@ -29,6 +29,8 @@ public class IBMTest {
 				"F8ADC16806B9CDFC", PinBlockFormat.ISOFORMAT0, PinKeyType.ZPK, "U0163EE5553AFBEDB2971BD3E1CDED378", "4385B5DB5AEAF809",  LoggerFactory.getLogger("HSM"));
 		hsmService.ibm().changePinOffset(hsmConfig, Utils.getPAN12("4135080060005875"), Utils.getValidationData("4135080060005875"), "F8ADC16806B9CDFC",
 				PinBlockFormat.ISOFORMAT0, "1395", PinKeyType.ZPK, "U0163EE5553AFBEDB2971BD3E1CDED378", "F8ADC16806B9CDFC", "4385B5DB5AEAF809",  LoggerFactory.getLogger("HSM"));
+
+
 	}
 
 }
